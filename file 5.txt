@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VEXUNO – Cars Games</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>VEXUNO</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="girls.html">Girls</a>
+      <a href="shooter.html">Shooter</a>
+      <a href="simulator.html">Simulator</a>
+      <a href="board.html">Board</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Cars Games</h2>
+    <div class="game-grid" id="gameContainer"></div>
+  </main>
+  <script src="games.js"></script>
+  <script>
+    renderGames('gameContainer', 'Cars');
+  </script>
+</body>
+</html>

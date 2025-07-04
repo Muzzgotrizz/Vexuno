@@ -1,0 +1,41 @@
+// games.js
+const games = [
+  // Cars (25)
+  { id: 1, title: "Turbo Drift Racer", category: "Cars", url: "#", thumbnail: "images/car1.jpg" },
+  { id: 2, title: "Open World Supercar", category: "Cars", url: "#", thumbnail: "images/car2.jpg" },
+  // ... add up to 25 cars
+
+  // Girls (32)
+  { id: 26, title: "Fashion Show", category: "Girls", url: "#", thumbnail: "images/girls1.jpg" },
+  { id: 27, title: "Cooking Mania", category: "Girls", url: "#", thumbnail: "images/girls2.jpg" },
+  // ... up to 57
+
+  // Shooter (32)
+  { id: 58, title: "Battle Royale Squad", category: "Shooter", url: "#", thumbnail: "images/shooter1.jpg" },
+  // ... up to 89
+
+  // Simulator (32)
+  { id: 90, title: "Farm Life Sim", category: "Simulator", url: "#", thumbnail: "images/sim1.jpg" },
+  // ... up to 121
+
+  // Board/Classic (32)
+  { id: 122, title: "Classic Chess", category: "Board", url: "#", thumbnail: "images/board1.jpg" },
+  // ... up to 153
+];
+
+function renderGames(containerId, filterCategory) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  games.forEach(game => {
+    if (!filterCategory || game.category === filterCategory) {
+      const card = document.createElement('div');
+      card.className = 'game-card';
+      card.innerHTML = `
+        <img src="${game.thumbnail}" alt="${game.title}">
+        <h3>${game.title}</h3>
+        <a href="${game.url}" class="play-btn">Play Now</a>
+      `;
+      container.appendChild(card);
+    }
+  });
+}
